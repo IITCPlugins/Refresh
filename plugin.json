@@ -1,0 +1,9 @@
+{
+  "name": "IITC plugin: Refresh",
+  "id": "iitc_plugin_Refresh",
+  "category": "Tweaks",
+  "description": "Refresh map",
+  "author": "McBen",
+  "entry": "src/Main.ts",
+  "minimize": false
+}

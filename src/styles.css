@@ -1,0 +1,21 @@
+#refreshMapButton img
+{
+    vertical-align: middle;
+}
+
+#refreshMapButton.running img {
+    animation-duration: 2s;
+    animation-name: refreshButton-running;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes refreshButton-running {
+	0% {
+        transform: rotate(0deg);
+	}
+	100% {
+        transform: rotate(360deg);
+	}
+}
+
