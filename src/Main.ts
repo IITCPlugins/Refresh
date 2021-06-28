@@ -12,6 +12,7 @@ class Refresh implements Plugin.Class {
 
         this.createButton();
 
+
         window.addHook("mapDataRefreshStart", () => this.refreshStart());
         window.addHook("mapDataRefreshEnd", () => this.refreshEnd());
     }
