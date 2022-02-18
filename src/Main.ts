@@ -46,6 +46,8 @@ class Refresh implements Plugin.Class {
         this.clearCache();
         window.mapDataRequest.clearTimeout();
         window.mapDataRequest.refresh();
+
+        window.chat.request();
     }
 
 
