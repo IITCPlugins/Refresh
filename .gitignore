@@ -1,3 +1,3 @@
-/node_modules/
-/dist/
-!/dist/iitc_plugin_Refresh.user.js
+node_modules/
+dist/*
+!dist/iitc_plugin_Refresh.user.js
