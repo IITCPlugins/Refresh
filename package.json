@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "iitcpluginkit": "file:../iitcpluginkit"
+    "iitcpluginkit": "^1.6.0"
   },
   "license": "Unlicense",
   "scripts": {
