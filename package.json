@@ -9,6 +9,7 @@
     "build:prod": "yarn ipk build:prod",
     "start": "yarn ipk fileserver",
     "autobuild": "yarn ipk autobuild",
-    "copy": "cross-env $ANDROID_HOME/platform-tools/adb push dist/iitc_plugin_Refresh.dev.user.js /storage/emulated/0/IITC_Mobile/plugins/iitc_plugin_Refresh.dev.user.js"
+    "copy": "cross-env $ANDROID_HOME/platform-tools/adb push dist/iitc_plugin_Refresh.dev.user.js /storage/emulated/0/IITC_Mobile/plugins/iitc_plugin_Refresh.dev.user.js",
+    "test": "echo test"
   }
 }
