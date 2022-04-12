@@ -48,6 +48,9 @@ class Refresh implements Plugin.Class {
         window.mapDataRequest.refresh();
 
         window.chat.request();
+
+        // @ts-ignore
+        window.portalDetail.setup();
     }
 
 
