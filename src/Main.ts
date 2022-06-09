@@ -33,7 +33,7 @@ class Refresh implements Plugin.Class {
                 )
             );
 
-        const parent = $(".leaflet-top.leaflet-left", window.map.getContainer());
+        const parent = $(".leaflet-top.leaflet-left", window.map.getContainer()).first();
         parent.prepend(toolbarGroup);
     }
 
