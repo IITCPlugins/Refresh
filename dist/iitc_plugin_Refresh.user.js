@@ -526,6 +526,11 @@ module.exports = "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' v
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/nonce */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nc = undefined;
+/******/ 	})();
+/******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
@@ -590,7 +595,7 @@ class Refresh {
             width: 16,
             height: 16
         })));
-        const parent = $(".leaflet-top.leaflet-left", window.map.getContainer());
+        const parent = $(".leaflet-top.leaflet-left", window.map.getContainer()).first();
         parent.prepend(toolbarGroup);
     }
     refresh() {
@@ -601,6 +606,8 @@ class Refresh {
         window.mapDataRequest.clearTimeout();
         window.mapDataRequest.refresh();
         window.chat.request();
+        // @ts-ignore
+        window.portalDetail.setup();
     }
     refreshStart() {
         $("#refreshMapButton").addClass("running");
