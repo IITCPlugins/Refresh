@@ -26,3 +26,4 @@ jobs:
           add: "dist/iitc_plugin_Refresh.user.js"
           default_author: github_actions
           message: "Release Version Update"
+          new_branch: nain
