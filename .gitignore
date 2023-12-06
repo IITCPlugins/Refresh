@@ -1,4 +1,2 @@
 node_modules/
 dist/*
-!dist/iitc_plugin_Refresh.user.js
-!dist/iitc_plugin_Refresh.meta.js
