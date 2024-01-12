@@ -3,7 +3,7 @@ import icon from "./refresh.svg";
 
 class Refresh implements Plugin.Class {
 
-    /** time to cache tiles (in sec) */
+    /** time to keep cache tiles (in sec) */
     CACHE_TIME = 10;
 
 
@@ -12,10 +12,10 @@ class Refresh implements Plugin.Class {
 
         this.createButton();
 
-
         window.addHook("mapDataRefreshStart", () => this.refreshStart());
         window.addHook("mapDataRefreshEnd", () => this.refreshEnd());
     }
+
 
     private createButton(): void {
         const toolbarGroup = $("<div>", { class: "leaflet-bar leaflet-control" })
@@ -41,14 +41,20 @@ class Refresh implements Plugin.Class {
     private refresh(): void {
         if ($("#refreshMapButton").hasClass("running")) return;
 
-
+        // make sure map is active
         window.idleReset();
+        
+        // clear tile cache
         this.clearCache();
+
+        // refresh map
         window.mapDataRequest.clearTimeout();
         window.mapDataRequest.refresh();
 
+        // refresh chat
         window.chat.request();
 
+        // clear portal detail cache
         // @ts-ignore
         window.portalDetail.setup();
     }
@@ -58,10 +64,12 @@ class Refresh implements Plugin.Class {
         $("#refreshMapButton").addClass("running");
     }
 
+
     private refreshEnd(): void {
         $("#refreshMapButton").removeClass("running");
         $("#refreshMapButton img").fadeOut(0).fadeIn(this.CACHE_TIME * 1000);
     }
+
 
     private clearCache(): void {
         const oldTime = window.mapDataRequest.cache.REQUEST_CACHE_MAX_AGE;
@@ -70,7 +78,6 @@ class Refresh implements Plugin.Class {
         window.mapDataRequest.cache.runExpire()
 
         window.mapDataRequest.cache.REQUEST_CACHE_MAX_AGE = oldTime;
-
     }
 }
 
