@@ -2,6 +2,10 @@ Refresh
 =======
 IITC-Plugin for the game Ingress.
 
+Install
+=====
+Link: [Plugin](https://github.com/IITCPlugins/Refresh/blob/main/dist/iitc_plugin_Refresh.user.js)
+
 
 Usage
 =====
