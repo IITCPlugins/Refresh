@@ -54,6 +54,8 @@ class Refresh implements Plugin.Class {
         // refresh chat
         window.chat.request();
 
+        window.artifact.requestData();
+
         // clear portal detail cache
         // @ts-ignore
         window.portalDetail.setup();
