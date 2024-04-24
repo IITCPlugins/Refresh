@@ -43,7 +43,7 @@ class Refresh implements Plugin.Class {
 
         // make sure map is active
         window.idleReset();
-        
+
         // clear tile cache
         this.clearCache();
 
@@ -58,7 +58,11 @@ class Refresh implements Plugin.Class {
 
         // clear portal detail cache
         // @ts-ignore
-        window.portalDetail.setup();
+        if (window.portalDetail.setup) {
+            window.portalDetail.setup();
+        } else if (window.portalDetail.clearCache) {
+            window.portalDetail.clearCache();
+        }
     }
 
 
