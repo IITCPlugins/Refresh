@@ -54,7 +54,7 @@ class Refresh implements Plugin.Class {
         // refresh chat
         window.chat.request();
 
-        window.artifact.requestData();
+        this.updateArtifacts();
 
         // clear portal detail cache
         // @ts-ignore
@@ -63,6 +63,12 @@ class Refresh implements Plugin.Class {
         } else if (window.portalDetail.clearCache) {
             window.portalDetail.clearCache();
         }
+    }
+
+    private updateArtifacts() {
+        // window.artifact.requestData(); <- this would generate an additional timer
+        const arti = window.artifact as any;
+        window.postAjax('getArtifactPortals', {}, arti.processData, arti.handleError);
     }
 
 
