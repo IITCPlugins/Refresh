@@ -2,7 +2,7 @@
 // @name            IITC plugin: Refresh
 // @id              iitc_plugin_Refresh
 // @category        Tweaks
-// @version         1.1.6
+// @version         1.1.7
 // @namespace       https://github.com/IITC-CE/ingress-intel-total-conversion
 // @updateURL       https://github.com/IITCPlugins/Refresh/raw/main/dist/iitc_plugin_Refresh.meta.js
 // @downloadURL     https://github.com/IITCPlugins/Refresh/raw/main/dist/iitc_plugin_Refresh.user.js
@@ -13,7 +13,11 @@
 // ==/UserScript==
 
 /**
- * v1.1.x
+ * v1.1.7
+ * - refresh artifacts
+ * - refresh current portal
+ * 
+ * v1.1.6
  * - docs, github and dependencies updates
  * 
  * v1.1
@@ -26,18 +30,17 @@
  */
 function wrapper(SCRIPT_INFO) {
 (() => {
+    "use strict";
     var __webpack_modules__ = {
-        465: (module, __webpack_exports__, __webpack_require__) => {
-            "use strict";
+        671: (module, __webpack_exports__, __webpack_require__) => {
             __webpack_require__.d(__webpack_exports__, {
-                Z: () => __WEBPACK_DEFAULT_EXPORT__
+                A: () => __WEBPACK_DEFAULT_EXPORT__
             });
-            var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(81), _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = __webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__), _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(645), ___CSS_LOADER_EXPORT___ = __webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__)()(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default());
+            var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(601), _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = __webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__), _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(314), ___CSS_LOADER_EXPORT___ = __webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__)()(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default());
             ___CSS_LOADER_EXPORT___.push([ module.id, "#refreshMapButton img{vertical-align:middle}#refreshMapButton.running img{animation-duration:2s;animation-iteration-count:infinite;animation-name:refreshButton-running;animation-timing-function:linear}@keyframes refreshButton-running{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}", "" ]);
             const __WEBPACK_DEFAULT_EXPORT__ = ___CSS_LOADER_EXPORT___;
         },
-        645: module => {
-            "use strict";
+        314: module => {
             module.exports = function(cssWithMappingToString) {
                 var list = [];
                 return list.toString = function toString() {
@@ -65,28 +68,25 @@ function wrapper(SCRIPT_INFO) {
                 }, list;
             };
         },
-        81: module => {
-            "use strict";
+        601: module => {
             module.exports = function(i) {
                 return i[1];
             };
         },
-        577: (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-            "use strict";
+        398: (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
             __webpack_require__.r(__webpack_exports__), __webpack_require__.d(__webpack_exports__, {
                 default: () => __WEBPACK_DEFAULT_EXPORT__
             });
-            var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(379), _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = __webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__), _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(795), _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = __webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__), _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(569), _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = __webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__), _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(565), _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = __webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__), _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(216), _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = __webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__), _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(589), _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = __webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__), _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_styles_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(465), options = {};
+            var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72), _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = __webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__), _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(825), _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = __webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__), _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(659), _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = __webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__), _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(56), _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = __webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__), _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(540), _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = __webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__), _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(113), _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = __webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__), _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_styles_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(671), options = {};
             options.styleTagTransform = _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default(), 
             options.setAttributes = _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default(), 
             options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head"), 
             options.domAPI = _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default(), 
             options.insertStyleElement = _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default();
-            _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_styles_css__WEBPACK_IMPORTED_MODULE_6__.Z, options);
-            const __WEBPACK_DEFAULT_EXPORT__ = _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_styles_css__WEBPACK_IMPORTED_MODULE_6__.Z && _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_styles_css__WEBPACK_IMPORTED_MODULE_6__.Z.locals ? _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_styles_css__WEBPACK_IMPORTED_MODULE_6__.Z.locals : void 0;
+            _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_styles_css__WEBPACK_IMPORTED_MODULE_6__.A, options);
+            const __WEBPACK_DEFAULT_EXPORT__ = _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_styles_css__WEBPACK_IMPORTED_MODULE_6__.A && _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_styles_css__WEBPACK_IMPORTED_MODULE_6__.A.locals ? _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_styles_css__WEBPACK_IMPORTED_MODULE_6__.A.locals : void 0;
         },
-        379: module => {
-            "use strict";
+        72: module => {
             var stylesInDOM = [];
             function getIndexByIdentifier(identifier) {
                 for (var result = -1, i = 0; i < stylesInDOM.length; i++) if (stylesInDOM[i].identifier === identifier) {
@@ -144,8 +144,7 @@ function wrapper(SCRIPT_INFO) {
                 };
             };
         },
-        569: module => {
-            "use strict";
+        659: module => {
             var memo = {};
             module.exports = function insertBySelector(insert, style) {
                 var target = function getTarget(target) {
@@ -164,23 +163,20 @@ function wrapper(SCRIPT_INFO) {
                 target.appendChild(style);
             };
         },
-        216: module => {
-            "use strict";
+        540: module => {
             module.exports = function insertStyleElement(options) {
                 var element = document.createElement("style");
                 return options.setAttributes(element, options.attributes), options.insert(element, options.options), 
                 element;
             };
         },
-        565: (module, __unused_webpack_exports, __webpack_require__) => {
-            "use strict";
+        56: (module, __unused_webpack_exports, __webpack_require__) => {
             module.exports = function setAttributesWithoutAttributes(styleElement) {
                 var nonce = __webpack_require__.nc;
                 nonce && styleElement.setAttribute("nonce", nonce);
             };
         },
-        795: module => {
-            "use strict";
+        825: module => {
             module.exports = function domAPI(options) {
                 if ("undefined" == typeof document) return {
                     update: function update() {},
@@ -209,17 +205,13 @@ function wrapper(SCRIPT_INFO) {
                 };
             };
         },
-        589: module => {
-            "use strict";
+        113: module => {
             module.exports = function styleTagTransform(css, styleElement) {
                 if (styleElement.styleSheet) styleElement.styleSheet.cssText = css; else {
                     for (;styleElement.firstChild; ) styleElement.removeChild(styleElement.firstChild);
                     styleElement.appendChild(document.createTextNode(css));
                 }
             };
-        },
-        529: module => {
-            module.exports = "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 341.333 341.333' style='enable-background:new 0 0 341.333 341.333' xml:space='preserve'%3e%3cpath d='M341.227 149.333V0l-50.133 50.133C260.267 19.2 217.707 0 170.56 0 76.267 0 .107 76.373.107 170.667s76.16 170.667 170.453 170.667c79.467 0 146.027-54.4 164.907-128h-44.373c-17.6 49.707-64.747 85.333-120.533 85.333-70.72 0-128-57.28-128-128s57.28-128 128-128c35.307 0 66.987 14.72 90.133 37.867l-68.8 68.8h149.333z'/%3e%3c/svg%3e";
         }
     }, __webpack_module_cache__ = {};
     function __webpack_require__(moduleId) {
@@ -249,55 +241,57 @@ function wrapper(SCRIPT_INFO) {
         }), Object.defineProperty(exports, "__esModule", {
             value: !0
         });
-    }, __webpack_require__.nc = void 0, (() => {
-        "use strict";
-        var refresh = __webpack_require__(529), refresh_default = __webpack_require__.n(refresh);
-        !function Register(plugin, name) {
-            const setup = () => {
-                window.plugin[name] = plugin, window.plugin[name].init();
-            };
-            setup.info = SCRIPT_INFO, window.bootPlugins || (window.bootPlugins = []), window.bootPlugins.push(setup), 
-            window.iitcLoaded && setup();
-        }(new class Refresh {
-            constructor() {
-                this.CACHE_TIME = 10;
-            }
-            init() {
-                __webpack_require__(577), this.createButton(), window.addHook("mapDataRefreshStart", (() => this.refreshStart())), 
-                window.addHook("mapDataRefreshEnd", (() => this.refreshEnd()));
-            }
-            createButton() {
-                const toolbarGroup = $("<div>", {
-                    class: "leaflet-bar leaflet-control"
-                }).append($("<a>", {
-                    id: "refreshMapButton",
-                    class: "leaflet-bar-part",
-                    click: () => this.refresh()
-                }).append($("<img>", {
-                    src: refresh_default(),
-                    width: 16,
-                    height: 16
-                })));
-                $(".leaflet-top.leaflet-left", window.map.getContainer()).first().prepend(toolbarGroup);
-            }
-            refresh() {
-                $("#refreshMapButton").hasClass("running") || (window.idleReset(), this.clearCache(), 
-                window.mapDataRequest.clearTimeout(), window.mapDataRequest.refresh(), window.chat.request(), 
-                window.portalDetail.setup());
-            }
-            refreshStart() {
-                $("#refreshMapButton").addClass("running");
-            }
-            refreshEnd() {
-                $("#refreshMapButton").removeClass("running"), $("#refreshMapButton img").fadeOut(0).fadeIn(1e3 * this.CACHE_TIME);
-            }
-            clearCache() {
-                const oldTime = window.mapDataRequest.cache.REQUEST_CACHE_MAX_AGE;
-                window.mapDataRequest.cache.REQUEST_CACHE_MAX_AGE = this.CACHE_TIME, window.mapDataRequest.cache.runExpire(), 
-                window.mapDataRequest.cache.REQUEST_CACHE_MAX_AGE = oldTime;
-            }
-        }, "Refresh");
-    })();
+    }, __webpack_require__.nc = void 0;
+    !function Register(plugin, name) {
+        const setup = () => {
+            window.plugin[name] = plugin, window.plugin[name].init();
+        };
+        setup.info = SCRIPT_INFO, window.bootPlugins || (window.bootPlugins = []), window.bootPlugins.push(setup), 
+        window.iitcLoaded && setup();
+    }(new class Refresh {
+        constructor() {
+            this.CACHE_TIME = 10;
+        }
+        init() {
+            __webpack_require__(398), this.createButton(), window.addHook("mapDataRefreshStart", (() => this.refreshStart())), 
+            window.addHook("mapDataRefreshEnd", (() => this.refreshEnd()));
+        }
+        createButton() {
+            const toolbarGroup = $("<div>", {
+                class: "leaflet-bar leaflet-control"
+            }).append($("<a>", {
+                id: "refreshMapButton",
+                class: "leaflet-bar-part",
+                click: () => this.refresh()
+            }).append($("<img>", {
+                src: "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' xml:space='preserve' viewBox='0 0 341.333 341.333'%3e%3cpath d='M341.227 149.333V0l-50.133 50.133C260.267 19.2 217.707 0 170.56 0 76.267 0 .107 76.373.107 170.667s76.16 170.667 170.453 170.667c79.467 0 146.027-54.4 164.907-128h-44.373c-17.6 49.707-64.747 85.333-120.533 85.333-70.72 0-128-57.28-128-128s57.28-128 128-128c35.307 0 66.987 14.72 90.133 37.867l-68.8 68.8h149.333z'/%3e%3c/svg%3e",
+                width: 16,
+                height: 16
+            })));
+            $(".leaflet-top.leaflet-left", window.map.getContainer()).first().prepend(toolbarGroup);
+        }
+        refresh() {
+            $("#refreshMapButton").hasClass("running") || (window.idleReset(), this.clearCache(), 
+            window.mapDataRequest.clearTimeout(), window.mapDataRequest.refresh(), window.chat.request(), 
+            this.updateArtifacts(), window.portalDetail.setup ? window.portalDetail.setup() : window.portalDetail.clearCache && window.portalDetail.clearCache(), 
+            null !== window.selectedPortal && window.portalDetail.request(window.selectedPortal));
+        }
+        updateArtifacts() {
+            const arti = window.artifact;
+            window.postAjax("getArtifactPortals", {}, arti.processData, arti.handleError);
+        }
+        refreshStart() {
+            $("#refreshMapButton").addClass("running");
+        }
+        refreshEnd() {
+            $("#refreshMapButton").removeClass("running"), $("#refreshMapButton img").fadeOut(0).fadeIn(1e3 * this.CACHE_TIME);
+        }
+        clearCache() {
+            const oldTime = window.mapDataRequest.cache.REQUEST_CACHE_MAX_AGE;
+            window.mapDataRequest.cache.REQUEST_CACHE_MAX_AGE = this.CACHE_TIME, window.mapDataRequest.cache.runExpire(), 
+            window.mapDataRequest.cache.REQUEST_CACHE_MAX_AGE = oldTime;
+        }
+    }, "Refresh");
 })();
 };
 (function () {
