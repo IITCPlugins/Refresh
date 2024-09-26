@@ -1,4 +1,8 @@
-v1.1.x
+v1.1.7
+- refresh artifacts
+- refresh current portal
+
+v1.1.6
 - docs, github and dependencies updates
 
 v1.1
