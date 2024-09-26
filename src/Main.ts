@@ -63,6 +63,11 @@ class Refresh implements Plugin.Class {
         } else if (window.portalDetail.clearCache) {
             window.portalDetail.clearCache();
         }
+
+        // refresh current portal view
+        if (window.selectedPortal !== null) {
+            window.portalDetail.request(window.selectedPortal);
+        }
     }
 
     private updateArtifacts() {
