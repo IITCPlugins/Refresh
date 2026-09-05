@@ -23,7 +23,7 @@ class Refresh implements Plugin.Class {
                 $("<a>", {
                     id: "refreshMapButton",
                     class: "leaflet-bar-part",
-                    click: () => this.refresh()
+                    on: {click: () => this.refresh()}
                 }).append(
                     $("<img>", {
                         src: icon,
@@ -54,7 +54,7 @@ class Refresh implements Plugin.Class {
         // refresh chat
         window.chat.request();
 
-        this.updateArtifacts();
+        window.artifact.requestData();
 
         // clear portal detail cache
         // @ts-ignore
@@ -63,17 +63,6 @@ class Refresh implements Plugin.Class {
         } else if (window.portalDetail.clearCache) {
             window.portalDetail.clearCache();
         }
-
-        // refresh current portal view
-        if (window.selectedPortal !== null) {
-            window.portalDetail.request(window.selectedPortal);
-        }
-    }
-
-    private updateArtifacts() {
-        // window.artifact.requestData(); <- this would generate an additional timer
-        const arti = window.artifact as any;
-        window.postAjax('getArtifactPortals', {}, arti.processData, arti.handleError);
     }
 
 
