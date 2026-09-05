@@ -57,10 +57,11 @@ class Refresh implements Plugin.Class {
         window.artifact.requestData();
 
         // clear portal detail cache
-        // @ts-ignore
         if (window.portalDetail.setup) {
             window.portalDetail.setup();
+        // @ts-ignore
         } else if (window.portalDetail.clearCache) {
+        // @ts-ignore
             window.portalDetail.clearCache();
         }
     }

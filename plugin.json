@@ -7,5 +7,6 @@
   "entry": "src/Main.ts",
   "minimize": false,
   "changelog": "changelog.md",
-  "downloadURL": "https://github.com/IITCPlugins/Refresh/raw/main/dist/iitc_plugin_Refresh.user.js"
+  "downloadURL": "https://github.com/IITCPlugins/Refresh/raw/main/dist/iitc_plugin_Refresh.user.js",
+  "fileversion": "1.10.4"
 }
