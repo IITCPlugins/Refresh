@@ -4,7 +4,7 @@ import icon from "./refresh.svg";
 class Refresh implements Plugin.Class {
 
     /** time to keep cache tiles (in sec) */
-    CACHE_TIME = 10;
+    CACHE_TIME = 5;
 
 
     init() {
@@ -23,7 +23,7 @@ class Refresh implements Plugin.Class {
                 $("<a>", {
                     id: "refreshMapButton",
                     class: "leaflet-bar-part",
-                    on: {click: () => this.refresh()}
+                    on: { click: () => this.refresh() }
                 }).append(
                     $("<img>", {
                         src: icon,
@@ -59,9 +59,9 @@ class Refresh implements Plugin.Class {
         // clear portal detail cache
         if (window.portalDetail.setup) {
             window.portalDetail.setup();
-        // @ts-ignore
+            // @ts-ignore
         } else if (window.portalDetail.clearCache) {
-        // @ts-ignore
+            // @ts-ignore
             window.portalDetail.clearCache();
         }
     }
